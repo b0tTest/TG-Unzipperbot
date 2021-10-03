@@ -51,7 +51,7 @@ async def extract_dis_archive(client: Client, message: Message):
         return await unzip_msg.edit("**Already one process is going on, Don't spam you idiot 😑!** \n\n /clean to Clear all Process...")
     else:
         pass
-    await unzip_msg.edit("**What do you want?**", reply_markup=Buttons.CHOOSE_E_BTN)
+    await unzip_msg.edit("**What do you want me do ?**🤔🤔🤔\n\n__• If your archive is password protected select **(Password) Extract🗳️** mode.__", reply_markup=Buttons.CHOOSE_E_BTN)
 
 # Database Commands
 @Client.on_message(filters.private & filters.command("stats"))
