@@ -54,7 +54,7 @@ class Buttons:
 class Messages:
     START_TEXT = """
 Hi 👋 **{}**,
-__a Simple  Telegram__ **Unzipper Bot**🗳️ __to Extract Various Types Of Archive like rar, zip, tar, 7z, tar.xz etc..__
+__a Simple  Telegram__ **Unzipper Bot**🗳️\n__to Extract Various Types Of Archive like rar, zip, tar, 7z, tar.xz etc..__
 
 
 **Made with ❤️ by @MyTestBotZ**
