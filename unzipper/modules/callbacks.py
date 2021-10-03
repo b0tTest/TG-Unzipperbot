@@ -118,3 +118,7 @@ async def unzipper_cb(unzip_bot: Client, query: CallbackQuery):
     
     elif query.data == "nobully":
         await query.message.edit("**Ok Ok! I won't delete those files 😂!**")
+        
+        
+    elif query.data == "close":
+        await query.message.delete()
