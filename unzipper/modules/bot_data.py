@@ -45,7 +45,7 @@ class Buttons:
     ME_GOIN_HOME=InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("Back 🏡", callback_data="megoinhome")
+                InlineKeyboardButton("Back to 🏡", callback_data="megoinhome")
             ]
         ]
     )
@@ -54,9 +54,7 @@ class Buttons:
 class Messages:
     START_TEXT = """
 Hi 👋 **{}**,
-I'm **Unzipper Bot**🗳️
-
-__I can extract archives Telegram Files like zip, rar, tar etc.__
+__a Simple  Telegram__ **Unzipper Bot**🗳️ __to Extract Various Types Of Archive like rar, zip, tar, 7z, tar.xz etc..__
 
 
 **Made with ❤️ by @MyTestBotZ**
