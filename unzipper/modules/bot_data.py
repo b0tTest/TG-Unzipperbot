@@ -8,8 +8,13 @@ class Buttons:
     START_BUTTON=InlineKeyboardMarkup(
         [
             [
+                InlineKeyboardButton("Creator", url="https://telegram.me/OO7ROBOT"),
+                InlineKeyboardButton("OtherBotZ", url="https://telegram.me/mybotzlist")
+            ],[
                 InlineKeyboardButton("⚙️ Help 📜", callback_data="helpcallback"),
-                InlineKeyboardButton("📝 About ⁉️", callback_data="aboutcallback")
+                InlineKeyboardButton("📝 About ⁉️", callback_data="aboutcallback"),
+           # ],[
+                InlineKeyboardButton("⛔ Cancel 🔐", callback_data="cancel_dis")
             ]
         ]
     )
@@ -49,9 +54,10 @@ class Buttons:
 class Messages:
     START_TEXT = """
 Hi 👋 **{}**,
-I'm **Unzipper Bot*🗳️
+I'm **Unzipper Bot**🗳️
 
-`I can extract archives Telegram Files like zip, rar, tar etc.`
+__I can extract archives Telegram Files like zip, rar, tar etc.__
+
 
 **Made with ❤️ by @MyTestBotZ**
     """
@@ -59,15 +65,15 @@ I'm **Unzipper Bot*🗳️
     HELP_TXT = """
 **How To Extract? 🤔🤔🤔**
 
-`1. Send the file that you want to extract.`
-`2. Click on extract button.`
-`3. wait for starting the Process..`
+__1. Send the file that you want to extract.
+2. Click on extract button.
+3. wait for starting the Process..__
 
 
 **Note:**
-    **1.** `If your archive is password protected select` **(Password) Extract🗳️** `mode. Bot isn't a GOD to know your file's password so If this happens just send that password!`
+    **1.** __If your archive is password protected select__ **(Password) Extract🗳️** __mode. Bot isn't a GOD to know your file's password so If this happens just send that password!__
     
-    **2.** `Please don't send corrupted files! If you sent a one by a mistake just send` **/clean** `command!`
+    **2.** __Please don't send corrupted files! If you sent a one by a mistake just send__ ** /clean** __command!__
     """
 
     ABOUT_TXT = """
@@ -97,6 +103,7 @@ I'm **Unzipper Bot*🗳️
 
 **Download time:** `{}`
 **Status:** `Trying to extract the archive`
+
 **© @TG_UnZipperbot**
     """
 
@@ -112,9 +119,9 @@ I'm **Unzipper Bot*🗳️
 
 **What to do?**
 
- - `Please make sure archive isn't corrupted`
- - `Please make sure that you selected the right mode!`
- - `May be Your archive format isn't supported 😔`
+ - Please make sure archive isn't corrupted
+ - Please make sure that you selected the right mode!
+ - May be Your archive format isn't supported 😔
 
 
     """
