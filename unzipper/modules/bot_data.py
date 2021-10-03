@@ -11,10 +11,10 @@ class Buttons:
                 InlineKeyboardButton("Creator", url="https://telegram.me/OO7ROBOT"),
                 InlineKeyboardButton("OtherBotZ", url="https://telegram.me/mybotzlist")
             ],[
-                InlineKeyboardButton("⚙️ Help 📜", callback_data="helpcallback"),
-                InlineKeyboardButton("📝 About ⁉️", callback_data="aboutcallback"),
+                InlineKeyboardButton("⚙️ Help", callback_data="helpcallback"),
+                InlineKeyboardButton("📝 About", callback_data="aboutcallback"),
            # ],[
-                InlineKeyboardButton("⛔ Cancel 🔐", callback_data="cancel_dis")
+                InlineKeyboardButton("⛔ Cancel", callback_data="close")
             ]
         ]
     )
