@@ -29,7 +29,7 @@ class Buttons:
     CLN_BTNS=InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("Clean My Files 😇", callbackhttpcancel_dis")
+                InlineKeyboardButton("Clean My Files 😇", callback_data="cancel_dis")
             ],
             [
                 InlineKeyboardButton("TF! Nooo 😳", callback_data="nobully")
