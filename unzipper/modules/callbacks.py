@@ -59,7 +59,7 @@ async def unzipper_cb(unzip_bot: Client, query: CallbackQuery):
             # Upload extracted files
             paths = get_files(path=ext_files_dir)
             i_e_buttons = await make_keyboard(paths=paths, user_id=user_id, chat_id=query.message.chat.id)
-            await query.message.edit("Select Files to Upload!", reply_markup=InlineKeyboardMarkup(i_e_buttons))
+            await query.message.edit("Select Files to Upload! ⤵️", reply_markup=InlineKeyboardMarkup(i_e_buttons))
         except Exception as e:
             try:
                 shutil.rmtree(download_path)
@@ -86,7 +86,7 @@ async def unzipper_cb(unzip_bot: Client, query: CallbackQuery):
         await query.message.edit("`Refreshing ⏳...`")
         rpaths = get_files(path=file_path)
         i_e_buttons = await make_keyboard(paths=rpaths, user_id=query.from_user.id, chat_id=query.message.chat.id)
-        await query.message.edit("Select Files to Upload 📤!", reply_markup=InlineKeyboardMarkup(i_e_buttons))
+        await query.message.edit("**Select Files to Upload 📤!**\n\n **@TG_UnZipperbot**", reply_markup=InlineKeyboardMarkup(i_e_buttons))
 
     
     elif query.data.startswith("ext_a"):
@@ -100,7 +100,7 @@ async def unzipper_cb(unzip_bot: Client, query: CallbackQuery):
                 pass
             await query.message.edit("`I've already sent you those files 😐, Don't ask me to resend 😒!`")
         for file in paths:
-            await unzip_bot.send_document(chat_id=spl_data[2], document=file, caption="**Extracted by @NexaUnzipper_Bot**")
+            await unzip_bot.send_document(chat_id=spl_data[2], document=file, caption="\n**Extracted by @TG_UnZipperBot**")
         await query.message.edit("**Successfully Uploaded!** 🥳🥳\n\n **Keep Support @MyTestBotZ**")
         try:
             shutil.rmtree(f"{Config.DOWNLOAD_LOCATION}/{spl_data[1]}")
