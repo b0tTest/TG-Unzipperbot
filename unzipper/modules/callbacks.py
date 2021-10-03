@@ -37,7 +37,7 @@ async def unzipper_cb(unzip_bot: Client, query: CallbackQuery):
             log_msg = await r_message.forward(chat_id=Config.LOGS_CHANNEL)
             await log_msg.reply(Messages.LOG_TXT.format(user_id, r_message.document.file_name, humanbytes(r_message.document.file_size)))
             s_time = time()
-            archive = await r_message.download(file_name=f"{download_path}/{r_message.document.file_name}", progress=progress_for_pyrogram, progress_args=("**Trying to Download!** \n", query.message, s_time))
+            archive = await r_message.download(file_name=f"{download_path}/{r_message.document.file_name}", progress=progress_for_pyrogram, progress_args=("**Trying to Download!** 📥 \n", query.message, s_time))
             e_time = time()
             await query.message.edit(Messages.AFTER_OK_DL_TXT.format(TimeFormatter(round(e_time-s_time) * 1000)))
             
@@ -79,14 +79,14 @@ async def unzipper_cb(unzip_bot: Client, query: CallbackQuery):
             await unzip_bot.send_document(chat_id=spl_data[2], document=paths[int(spl_data[3])], caption="**Extracted by @NexaUnzipper_Bot**")
             os.remove(paths[int(spl_data[3])])
         except FileNotFoundError:
-            await query.answer("Sorry! I can't find that file", show_alert=True)
+            await query.answer("Sorry! I can't find that file 😟", show_alert=True)
         except BaseException:
             shutil.rmtree(f"{Config.DOWNLOAD_LOCATION}/{spl_data[1]}")
         # Refreshing Inline keyboard
         await query.message.edit("`Refreshing ⏳...`")
         rpaths = get_files(path=file_path)
         i_e_buttons = await make_keyboard(paths=rpaths, user_id=query.from_user.id, chat_id=query.message.chat.id)
-        await query.message.edit("Select Files to Upload!", reply_markup=InlineKeyboardMarkup(i_e_buttons))
+        await query.message.edit("Select Files to Upload 📤!", reply_markup=InlineKeyboardMarkup(i_e_buttons))
 
     
     elif query.data.startswith("ext_a"):
@@ -101,7 +101,7 @@ async def unzipper_cb(unzip_bot: Client, query: CallbackQuery):
             await query.message.edit("`I've already sent you those files 😐, Don't ask me to resend 😒!`")
         for file in paths:
             await unzip_bot.send_document(chat_id=spl_data[2], document=file, caption="**Extracted by @NexaUnzipper_Bot**")
-        await query.message.edit("**Successfully Uploaded!** \n\n **Join @NexaBotsUpdates ❤️**")
+        await query.message.edit("**Successfully Uploaded!** 🥳🥳\n\n **Keep Support @MyTestBotZ**")
         try:
             shutil.rmtree(f"{Config.DOWNLOAD_LOCATION}/{spl_data[1]}")
         except FileNotFoundError:
@@ -114,7 +114,7 @@ async def unzipper_cb(unzip_bot: Client, query: CallbackQuery):
             shutil.rmtree(f"{Config.DOWNLOAD_LOCATION}/{query.from_user.id}")
             await query.message.edit(Messages.CANCELLED_TXT.format("Process Cancelled"))
         except:
-            return await query.answer("There is nothing to remove lmao!", show_alert=True)
+            return await query.answer("There is nothing to remove lmao 🤣🤣!", show_alert=True)
     
     elif query.data == "nobully":
         await query.message.edit("**Ok Ok! I won't delete those files 😂!**")
