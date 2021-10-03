@@ -37,7 +37,7 @@ async def unzipper_cb(unzip_bot: Client, query: CallbackQuery):
             log_msg = await r_message.forward(chat_id=Config.LOGS_CHANNEL)
             await log_msg.reply(Messages.LOG_TXT.format(user_id, r_message.document.file_name, humanbytes(r_message.document.file_size)))
             s_time = time()
-            archive = await r_message.download(file_name=f"{download_path}/{r_message.document.file_name}", progress=progress_for_pyrogram, progress_args=("**Trying to Download!** 📥 \n", query.message, s_time))
+            archive = await r_message.download(file_name=f"{download_path}/{r_message.document.file_name}", progress=progress_for_pyrogram, progress_args=("📥 **Downloading to my Server**📡\n", query.message, s_time))
             e_time = time()
             await query.message.edit(Messages.AFTER_OK_DL_TXT.format(TimeFormatter(round(e_time-s_time) * 1000)))
             
@@ -76,7 +76,7 @@ async def unzipper_cb(unzip_bot: Client, query: CallbackQuery):
             shutil.rmtree(f"{Config.DOWNLOAD_LOCATION}/{spl_data[1]}")
             return await query.message.edit("`I've already sent you those files 😐, Don't ask me to resend 😒!`")
         try:
-            await unzip_bot.send_document(chat_id=spl_data[2], document=paths[int(spl_data[3])], caption="**Extracted by @NexaUnzipper_Bot**")
+            await unzip_bot.send_document(chat_id=spl_data[2], document=paths[int(spl_data[3])], caption="**Extracted by @TG_UnZipperBot**")
             os.remove(paths[int(spl_data[3])])
         except FileNotFoundError:
             await query.answer("Sorry! I can't find that file 😟", show_alert=True)
