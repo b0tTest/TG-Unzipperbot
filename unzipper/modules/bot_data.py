@@ -8,8 +8,8 @@ class Buttons:
     START_BUTTON=InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("Help 📜", callback_data="helpcallback"),
-                InlineKeyboardButton("About ⁉️", callback_data="aboutcallback")
+                InlineKeyboardButton("⚙️ Help 📜", callback_data="helpcallback"),
+                InlineKeyboardButton("📝 About ⁉️", callback_data="aboutcallback")
             ]
         ]
     )
@@ -17,11 +17,11 @@ class Buttons:
     CHOOSE_E_BTN=InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("Extract 📂", callback_data="extract_file|no_pass"),
-                InlineKeyboardButton("(Password) Extract 📂", callback_data="extract_file|with_pass")
+                InlineKeyboardButton("Extract 🗳️", callback_data="extract_file|no_pass"),
+                InlineKeyboardButton("(Password) Extract 🗳️", callback_data="extract_file|with_pass")
             ],
             [
-                InlineKeyboardButton("Cancel ❌", callback_data="cancel_dis")
+                InlineKeyboardButton("⛔ Cancel 🔐", callback_data="cancel_dis")
             ]
         ]
     )
@@ -29,7 +29,7 @@ class Buttons:
     CLN_BTNS=InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("Clean My Files 😇", callback_data="cancel_dis")
+                InlineKeyboardButton("Clean My Files 😇", callbackhttpcancel_dis")
             ],
             [
                 InlineKeyboardButton("TF! Nooo 😳", callback_data="nobully")
@@ -48,36 +48,40 @@ class Buttons:
 
 class Messages:
     START_TEXT = """
-Hi **{}**, I'm **Nexa Unzipper Bot** 😇!
+Hi 👋 **{}**,
+I'm **Unzipper Bot*🗳️
 
-`I can extract archives like zip, rar, tar etc.`
+`I can extract archives Telegram Files like zip, rar, tar etc.`
 
-**Made with ❤️ by @NexaBotsUpdates**
+**Made with ❤️ by @MyTestBotZ**
     """
 
     HELP_TXT = """
-**How To Extract? 🤔**
+**How To Extract? 🤔🤔🤔**
 
 `1. Send the file that you want to extract.`
 `2. Click on extract button.`
+`3. wait for starting the Process..`
 
 
 **Note:**
-    **1.** `If your archive is password protected select` **(Password) Extract 📂** `mode. Bot isn't a GOD to know your file's password so If this happens just send that password!`
+    **1.** `If your archive is password protected select` **(Password) Extract🗳️** `mode. Bot isn't a GOD to know your file's password so If this happens just send that password!`
     
     **2.** `Please don't send corrupted files! If you sent a one by a mistake just send` **/clean** `command!`
     """
 
     ABOUT_TXT = """
-**About Nexa Unzipper Bot,**
+**@TG_UnzipperBot**
 
-✘ **Language:** [Python](https://www.python.org/)
-✘ **Framework:** [Pyrogram](https://docs.pyrogram.org/)
-✘ **Source Code:** [Itz-fork/Unzipper-Bot](https://github.com/Itz-fork/Unzipper-Bot)
-✘ **Developer:** [Itz-fork](https://github.com/Itz-fork)
+✪ » **Creator :** [Meeeee...](https://telegram.me/OO7ROBot)
+✪ » **Channel:** [MyTestBotZ](https://telegram.me/MyTestBotZ)
+✪ » **Other Bots:** [Other BotZ](https://telegram.me/mybotzlist)
+✪ » **Language:** [Python](https://www.python.org/)
+✪ » **Framework:** [Pyrogram](https://docs.pyrogram.org/)
+✪ » **Dev: Itz-fork**
+✪ » **Build Version: V1**
 
 
-**Made with ❤️ by @NexaBotsUpdates**
     """
 
     LOG_TXT = """
@@ -89,17 +93,18 @@ Hi **{}**, I'm **Nexa Unzipper Bot** 😇!
     """
 
     AFTER_OK_DL_TXT = """
-**Successfully Downloaded**
+**✅ Successfully Downloaded 📥**
 
 **Download time:** `{}`
 **Status:** `Trying to extract the archive`
+**© @TG_UnZipperbot**
     """
 
     EXT_OK_TXT = """
-**Extraction Successfull!**
+**☑️ Extraction Successfull! 😌😌**
 
 **Extraction time:** `{}`
-**Status:** `Trying to upload`
+**Status:** `Trying to upload 📤`
     """
 
     EXT_FAILED_TXT = """
@@ -111,7 +116,7 @@ Hi **{}**, I'm **Nexa Unzipper Bot** 😇!
  - `Please make sure that you selected the right mode!`
  - `May be Your archive format isn't supported 😔`
 
-**Please report this at @Nexa_bots if you think this is a serious error**
+
     """
 
     ERROR_TXT = """
@@ -120,7 +125,6 @@ Hi **{}**, I'm **Nexa Unzipper Bot** 😇!
 **ERROR:** {}
 
 
-**Please report this at @Nexa_bots if you think this is a serious error**
     """
 
     CANCELLED_TXT = """
