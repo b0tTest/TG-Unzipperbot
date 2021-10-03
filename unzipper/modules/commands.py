@@ -48,13 +48,13 @@ async def extract_dis_archive(client: Client, message: Message):
     download_path = f"{Config.DOWNLOAD_LOCATION}/{user_id}"
     ext_files_dir = f"{download_path}/extracted"
     if os.path.isdir(download_path):
-        return await unzip_msg.edit("`Already one process is going on, Don't spam you idiot 😑!`")
+        return await unzip_msg.edit("**Already one process is going on, Don't spam you idiot 😑!** \n\n /clean to Clear all Process...")
     else:
         pass
     await unzip_msg.edit("**What do you want?**", reply_markup=Buttons.CHOOSE_E_BTN)
 
 # Database Commands
-@Client.on_message(filters.private & filters.command("stats") & filters.user(Config.BOT_OWNER))
+@Client.on_message(filters.private & filters.command("stats"))
 async def send_stats(client: Client, message: Message):
     stats_msg = await message.reply("`Processing ⚙️...`")
     total, used, free = shutil.disk_usage(".")
