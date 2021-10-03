@@ -8,8 +8,8 @@ class Buttons:
     START_BUTTON=InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("Creator", url="https://telegram.me/OO7ROBOT"),
-                InlineKeyboardButton("OtherBotZ", url="https://telegram.me/mybotzlist")
+                InlineKeyboardButton("👤 Creator", url="https://telegram.me/OO7ROBOT"),
+                InlineKeyboardButton("🤖 OtherBotZ", url="https://telegram.me/mybotzlist")
             ],[
                 InlineKeyboardButton("⚙️ Help", callback_data="helpcallback"),
                 InlineKeyboardButton("📝 About", callback_data="aboutcallback"),
