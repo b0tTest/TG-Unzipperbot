@@ -25,8 +25,8 @@ async def progress_for_pyrogram(current, total, ud_type, message, start):
         time_to_completion = TimeFormatter(milliseconds=time_to_completion) #time left
 
         progress = "\n<b>Uploading...... {2}%</b> \n{0}{1}\n".format(
-            ''.join(["🟩" for i in range(math.floor(percentage / 5))]),
-            ''.join(["◻️" for i in range(10 - math.floor(percentage / 5))]),
+            ''.join(["🟩" for i in range(math.floor(percentage / 10))]),
+            ''.join(["⬜️" for i in range(10 - math.floor(percentage / 10))]),
             round(percentage, 2))
 
         tmp = progress + "\n🍿 **UpLoaded : {0}\n🍿 File Size : {1}**\n🍿 **Speed...: {2}/s**\n🍿 **Time Left : {3}**\n".format(
