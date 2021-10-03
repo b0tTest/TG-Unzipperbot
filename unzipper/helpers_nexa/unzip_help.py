@@ -13,7 +13,7 @@ async def progress_for_pyrogram(current, total, ud_type, message, start):
     now = time.time()
     diff = now - start
     #if round(diff % 10.00) == 0 or current == total:
-    if round(diff % 3.00) > 2.99 or current == total:
+    if round(diff % 2.00) > 0.99 or current == total:
         percentage = current * 100 / total
         speed = current / diff
         elapsed_time = round(diff) * 1000
@@ -24,12 +24,12 @@ async def progress_for_pyrogram(current, total, ud_type, message, start):
         estimated_total_time = TimeFormatter(milliseconds=estimated_total_time)
         time_to_completion = TimeFormatter(milliseconds=time_to_completion) #time left
 
-        progress = "\n<b>Uploading......</b> \n{0}{1} <b>{2}%</b>\n".format(
-            ''.join(["●" for i in range(math.floor(percentage / 5))]),
-            ''.join(["○" for i in range(20 - math.floor(percentage / 5))]),
+        progress = "\n<b>Uploading...... {2}%</b> \n{0}{1}\n".format(
+            ''.join(["🟩" for i in range(math.floor(percentage / 5))]),
+            ''.join(["◻️" for i in range(10 - math.floor(percentage / 5))]),
             round(percentage, 2))
 
-        tmp = progress + "\n🍿 **UpLoaded : {0}\n🍿 File Size : {1}**\n🍿 **Speed:** {2}/s\n🍿 **Time Left :** {3}\n".format(
+        tmp = progress + "\n🍿 **UpLoaded : {0}\n🍿 File Size : {1}**\n🍿 **Speed...: {2}/s**\n🍿 **Time Left : {3}**\n".format(
             humanbytes(current),
             humanbytes(total),
             humanbytes(speed),
