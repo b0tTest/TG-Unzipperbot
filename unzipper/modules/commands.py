@@ -82,7 +82,9 @@ async def send_stats(client: Client, message: Message):
 
 **🎛 Hardware Usage,**
  ↳**CPU Usage:** `{cpu_usage}%`
- ↳**RAM Usage:** `{ram_usage}%`"""
+ ↳**RAM Usage:** `{ram_usage}%`
+ 
+ **    © @TG_UnZipperbot**"""
     )
 
 async def _do_broadcast(message, user):
